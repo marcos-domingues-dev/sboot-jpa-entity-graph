@@ -1,3 +1,13 @@
+INSERT INTO "PUBLIC"."CUSTOMER" VALUES
+(1, '10', 'John Doe'),
+(2, '20', 'Richard Roe'),
+(3, '30', 'John Smith');
+
+INSERT INTO "PUBLIC"."EMPLOYEE" VALUES
+(1, '10', 'Joe Bloggs'),
+(2, '20', 'Mary Roe'),
+(3, '30', 'Johnny Noakes Smith');
+
 INSERT INTO "PUBLIC"."AUTHOR" VALUES
 (1, '9001', 'eric.freeman@oreilly.com', 'Eric Freeman'),
 (2, '9002', 'elisabeth.robson@oreilly.com', 'Elisabeth Robson'),
@@ -2119,3 +2129,42 @@ INSERT INTO "PUBLIC"."BOOK_AUTHORS" VALUES
 (474, 685),
 (278, 686),
 (475, 687);
+
+INSERT INTO "PUBLIC"."BOOKSTORE_ORDER" ("ID", "CUSTOMER_ID", "EMPLOYEE_ID") VALUES
+(1, 1, 3),
+(2, 2, 2),
+(3, 3, 1);
+
+INSERT INTO "PUBLIC"."BOOKSTORE_ORDERITEM" ("ID", "ORDER_ID", "BOOK_ID") VALUES
+(1, 1, 51),
+(2, 1, 52),
+(3, 1, 53);
+INSERT INTO "PUBLIC"."BOOKSTORE_ORDERITEM" ("ID", "ORDER_ID", "BOOK_ID") VALUES
+(4, 2, 11),
+(5, 2, 12),
+(6, 2, 13),
+(7, 2, 14),
+(8, 2, 15),
+(9, 2, 16);
+INSERT INTO "PUBLIC"."BOOKSTORE_ORDERITEM" ("ID", "ORDER_ID", "BOOK_ID") VALUES
+(10, 3, 91),
+(11, 3, 92),
+(12, 3, 93),
+(13, 3, 93);
+
+INSERT INTO "PUBLIC"."BOOKSTORE_ORDER_ITEMS" ("BOOKSTORE_ORDER_ID", "ITEMS_ID") VALUES
+(1, 1),
+(1, 2),
+(1, 3);
+INSERT INTO "PUBLIC"."BOOKSTORE_ORDER_ITEMS" ("BOOKSTORE_ORDER_ID", "ITEMS_ID") VALUES
+(2, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(2, 8),
+(2, 9);
+INSERT INTO "PUBLIC"."BOOKSTORE_ORDER_ITEMS" ("BOOKSTORE_ORDER_ID", "ITEMS_ID") VALUES
+(3, 10),
+(3, 11),
+(3, 12),
+(3, 13);
