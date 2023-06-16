@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "4c4df704-ea83-4427-af9d-fb203969d10f",
+		"name": "Book Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FetchType",
+			"item": [
+				{
+					"name": "Find All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/find/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"find",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - custom-mapper",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/find/custom-mapper/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"find",
+								"custom-mapper",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - custom-fetch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/find/custom-fetch/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"find",
+								"custom-fetch",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entity Graph",
+			"item": [
+				{
+					"name": "Find All - declarative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/graph/all-nodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"graph",
+								"all-nodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - declarative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/150/graph/all-nodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"150",
+								"graph",
+								"all-nodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - programatic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/2/graph/programatic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"2",
+								"graph",
+								"programatic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - declarative - bookAllNodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/2/graph/declarative?graphName=bookAllNodes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"2",
+								"graph",
+								"declarative"
+							],
+							"query": [
+								{
+									"key": "graphName",
+									"value": "bookAllNodes"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - declarative - bookAndPublisher",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/2/graph/declarative?graphName=bookAndPublisher",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"2",
+								"graph",
+								"declarative"
+							],
+							"query": [
+								{
+									"key": "graphName",
+									"value": "bookAndPublisher"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - declarative - bookAndAuthors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/2/graph/declarative?graphName=bookAndAuthors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"2",
+								"graph",
+								"declarative"
+							],
+							"query": [
+								{
+									"key": "graphName",
+									"value": "bookAndAuthors"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Book - declarative - custom",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/book/2/graph/declarative/custom-nodes?bookNodes=book,publisher,authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"2",
+								"graph",
+								"declarative",
+								"custom-nodes"
+							],
+							"query": [
+								{
+									"key": "bookNodes",
+									"value": "book,publisher,authors"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
