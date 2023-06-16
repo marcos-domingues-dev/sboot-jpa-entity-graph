@@ -1,6 +1,6 @@
 package br.dev.techtalk.domain.enumeration;
 
-public enum BookMemberEnum {
+public enum BookNodesEnum {
 
     BOOK("book"),
     PUBLISHER("publisher"),
@@ -8,7 +8,7 @@ public enum BookMemberEnum {
 
     private final String value;
 
-    BookMemberEnum(String value) {
+    BookNodesEnum(String value) {
         this.value = value;
     }
 
@@ -16,8 +16,8 @@ public enum BookMemberEnum {
         return value;
     }
 
-    public BookMemberEnum findByValue(String value) {
-        for (BookMemberEnum item : BookMemberEnum.values()) {
+    public BookNodesEnum findByValue(String value) {
+        for (BookNodesEnum item : BookNodesEnum.values()) {
             if (item.value.equals(value)) {
                 return item;
             }

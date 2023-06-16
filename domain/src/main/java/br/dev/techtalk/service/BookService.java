@@ -1,19 +1,15 @@
 package br.dev.techtalk.service;
 
 import br.dev.techtalk.domain.Book;
-import br.dev.techtalk.domain.enumeration.BookMemberEnum;
 import br.dev.techtalk.repository.BookRepository;
+import lombok.AllArgsConstructor;
 
-import java.util.Arrays;
 import java.util.List;
 
+@AllArgsConstructor
 public class BookService {
 
     private final BookRepository bookRepository;
-
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
 
     public List<Book> findAll() {
         return bookRepository.findAll();
@@ -23,9 +19,8 @@ public class BookService {
         return bookRepository.findById(id);
     }
 
-    public Book findCustomById(Long id) {
-        List<String> bookMembers = Arrays.asList(BookMemberEnum.BOOK.getValue());
-        return bookRepository.findById(id, bookMembers);
+    public Book findById(Long id, List<String> bookNodes) {
+        return bookRepository.findById(id, bookNodes);
     }
 
     public Book findCustomFetchById(Long id) {

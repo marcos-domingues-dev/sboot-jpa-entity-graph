@@ -2,35 +2,33 @@ package br.dev.techtalk.service;
 
 import br.dev.techtalk.domain.Book;
 import br.dev.techtalk.repository.BookGraphRepository;
+import lombok.AllArgsConstructor;
 
 import java.util.List;
 
+@AllArgsConstructor
 public class GraphService {
 
     private final BookGraphRepository bookGraphRepository;
 
-    public GraphService(BookGraphRepository bookGraphRepository) {
-        this.bookGraphRepository = bookGraphRepository;
+    public List<Book> findAll_WithSpringDataJPA() {
+        return bookGraphRepository.findAll_WithSpringDataJPA();
     }
 
-    public List<Book> findAll() {
-        return bookGraphRepository.findAll();
+    public Book findBookById_WithSpringDataJPA(Long id) {
+        return bookGraphRepository.findBookById_WithSpringDataJPA(id);
     }
 
-    public List<Book> findAllUsingSpringDataAndGraph() {
-        return bookGraphRepository.findAllUsingSpringDataAndGraph();
+    public Book findBookById_UsingDeclarativeEntityGraph(String graphName, Long id) {
+        return bookGraphRepository.findBookById_UsingDeclarativeEntityGraph(graphName, id);
     }
 
-    public Book graphNamedById(Long id, String graphName) {
-        return bookGraphRepository.findBookWithNamedEntityGraphById(graphName, id);
+    public Book findBookById_UsingProgramaticEntityGraph(Long id) {
+        return bookGraphRepository.findBookById_UsingProgramaticEntityGraph(id);
     }
 
-    public Book graphById(Long id) {
-        return bookGraphRepository.findBookGraphAllMembersDynamicallyById(id);
-    }
-
-    public Book graphCustpmById(Long id, List<String> bookMembers) {
-        return bookGraphRepository.findBookGraphCustomMembersDynamicallyById(id, bookMembers);
+    public Book findBookById_UsingProgramaticEntityGraph_CustomNodes(Long id, List<String> bookNodes) {
+        return bookGraphRepository.findBookById_UsingProgramaticEntityGraph_CustomNodes(id, bookNodes);
     }
 
 }

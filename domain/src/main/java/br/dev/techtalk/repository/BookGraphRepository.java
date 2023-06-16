@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface BookGraphRepository {
 
-    List<Book> findAll();
+    List<Book> findAll_WithSpringDataJPA();
 
-    List<Book> findAllUsingSpringDataAndGraph();
+    Book findBookById_WithSpringDataJPA(Long id);
 
-    Book findBookWithNamedEntityGraphById(String graphName, Long id);
+    Book findBookById_UsingDeclarativeEntityGraph(String graphName, Long id);
 
-    Book findBookGraphAllMembersDynamicallyById(Long id);
+    Book findBookById_UsingProgramaticEntityGraph(Long id);
 
-    Book findBookGraphCustomMembersDynamicallyById(Long id, List<String> bookMembers);
+    Book findBookById_UsingProgramaticEntityGraph_CustomNodes(Long id, List<String> bookNodes);
 
 
 }

@@ -9,9 +9,7 @@ public interface BookRepository {
 
     Book findById(Long id);
 
-    Book findById(Long id, List<String> bookMembers);
-
-    void save(Book book);
+    Book findById(Long id, List<String> bookNodes);
 
     Book findCustomFetchById(Long id);
 }
